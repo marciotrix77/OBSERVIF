@@ -1,4 +1,4 @@
-# **OBSERVIF - Plataforma de Observatórios Educacionais**
+# **OBSERVIF - Observatório de Indicadores Educacionais do IF Baiano**
 
 O **OBSERVIF** é uma plataforma desenvolvida para consolidar e disponibilizar dados educacionais do Instituto Federal Baiano (IF Baiano) em dashboards interativos e intuitivos. A plataforma tem como objetivo fornecer uma visão abrangente e detalhada dos indicadores educacionais, permitindo análises estratégicas sobre matrículas, processos seletivos, evasão escolar e demanda por cursos.
 
