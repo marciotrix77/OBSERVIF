@@ -1,6 +1,34 @@
-# Observatório de Indicadores do IF Baiano
+# **OBSERVIF - Plataforma de Observatórios Educacionais**
 
-Este é um sistema desenvolvido em Django para gerenciar e visualizar indicadores do IF Baiano.
+O **OBSERVIF** é uma plataforma desenvolvida para consolidar e disponibilizar dados educacionais do Instituto Federal Baiano (IF Baiano) em dashboards interativos e intuitivos. A plataforma tem como objetivo fornecer uma visão abrangente e detalhada dos indicadores educacionais, permitindo análises estratégicas sobre matrículas, processos seletivos, evasão escolar e demanda por cursos.
+
+## **Principais Funcionalidades**
+- **Dashboards Interativos**: Visualize gráficos e relatórios dinâmicos sobre matrículas, inscrições no SISU, PROSEL e outros processos educacionais.
+- **Dados Consolidados**: Acesse informações segmentadas por campus, curso, modalidade de ensino, cidade e outros critérios relevantes.
+- **Fontes Confiáveis**: Os dados são extraídos diretamente de sistemas institucionais, como o SUAP, Censo da Educação Básica/Superior, SISU Gestão e OPINA.
+- **Ferramenta de Tomada de Decisão**: Subsidie decisões estratégicas relacionadas à oferta de vagas, alocação de recursos e planejamento institucional.
+- **Acessibilidade**: Interface amigável e responsiva, acessível tanto para gestores quanto para pesquisadores e demais interessados.
+
+## **Impacto**
+O OBSERVIF transforma dados brutos em insights acionáveis, contribuindo para:
+- Melhoria na gestão educacional.
+- Identificação de tendências e padrões no comportamento dos estudantes.
+- Expansão e consolidação da oferta educacional do IF Baiano.
+
+## **Tecnologias Utilizadas**
+- **Backend**: Python com Django  
+- **Frontend**: HTML, CSS, JavaScript (e bibliotecas como Chart.js ou Plotly para visualizações)  
+- **Banco de Dados**: PostgreSQL (ou outro banco relacional)  
+- **Deploy**: Nginx, Gunicorn, Docker (opcional)  
+
+## **Como Contribuir**
+Contribuições são bem-vindas! Se você deseja melhorar a plataforma, corrigir bugs ou adicionar novos recursos, consulte nossa [documentação](docs/) ou entre em contato com a equipe de desenvolvimento.
+
+---
+
+## **Links Úteis**
+- [Repositório no GitHub](https://github.com/marciotrix77/OBSERVIF)
+- [Plataforma Online](#) *(insira o link quando disponível)*
 
 ---
 
@@ -162,4 +190,6 @@ sudo ufw allow 'Nginx Full'
 sudo ufw enable
 ```
 
+### **Licença**
+Este projeto está licenciado sob a [MIT License](LICENSE).  
 
