@@ -26,7 +26,7 @@ sudo apt update
 sudo apt install python3 python3-pip python3-venv nginx postgresql postgresql-contrib
 
 # 2. Clone o repositório do projeto
-git clone <URL_DO_SEU_REPOSITORIO>
+git clone https://github.com/marciotrix77/OBSERVIF.git
 cd <PASTA_DO_PROJETO>
 
 # 3. Crie e ative um ambiente virtual
