@@ -1,0 +1,46 @@
+{% extends "global/pages/master-page.html" %}
+{% load static %}
+
+<title> OBSERVIF | {% block title %} Painel {% endblock title %} </title>
+
+{% block conteudo %}
+<h4 class='titulo-sessao-principal'>{{ dashboard.nome|upper }}</h1>
+<hr class='linha-verde'>
+
+<div class="dashboard-page">
+    <!-- Coluna da esquerda: Detalhes do Dashboard -->
+    <div class="dashboard-details">
+        <h3>Detalhes do Dashboard</h3>
+        <hr class='linha-verde linha-reduzida'>
+        <p><strong>Descrição:</strong> {{ dashboard.descricao }}</p>
+        <p><strong>Origem dos Dados:</strong> {{ dashboard.fonte_dos_dados }}</p>
+        <p><strong>Aplicação Prática:</strong> {{ dashboard.utilizacao|safe }}</p>
+        <p><strong>Última Atualização:</strong> {{ dashboard.data_atualizacao|date:"d/m/Y" }}</p>
+    </div>
+
+    <!-- Coluna da direita: Dashboard -->
+    <div class="dashboard-display">
+        <iframe 
+            src="{{ dashboard.link }}" 
+            width="100%" 
+            height="500" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<!-- Bloco para exibir o dashboard -->
+<div id="dashboard-display" class="dashboard-display" style="display: none;">
+    <iframe id="dashboard-iframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+</div>
+{% endblock conteudo %}
+
+
+
+
+
+
+{% block javascript %}
+    <script src="{% static 'login/js/script.js' %}"></script> 
+{% endblock javascript %}

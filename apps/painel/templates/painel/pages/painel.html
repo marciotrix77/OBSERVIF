@@ -1,0 +1,25 @@
+{% extends "global/pages/master-page.html" %}
+{% load static %}
+
+<title> OBSERVIF | {% block title %} Painel {% endblock title %} </title>
+
+{% block conteudo %}
+<h4 class='titulo-sessao-principal'>LISTA DE DASHBOARDS</h4>
+<hr class='linha-verde'>
+<div class="dashboard-container">
+
+    {% for dashboard in dashboards %}
+        <div class="dashboard-card">
+            <h3>{{ dashboard.nome }}</h3>
+            <p>{{ dashboard.descricao|slice:":100" }}...</p>
+            <a href="{% url 'painel:dashboard' dashboard.id %}" class="dashboard-link">Acessar Dashboard</a>
+        </div>
+    {% endfor %}
+
+</diV>
+{% endblock conteudo %}
+
+
+{% block javascript %}
+    <script src="{% static 'login/js/script.js' %}"></script> 
+{% endblock javascript %}

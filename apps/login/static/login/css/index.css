@@ -1,0 +1,392 @@
+@import url('style.css');
+
+/* Estilos específicos para o painel */
+
+body {
+    margin: 0;
+}
+
+.painel-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Menu Lateral */
+
+.menu-lateral {
+    background-color: #7cb342;
+    color: #fff;
+    width: 190px; /* Largura do menu lateral */
+    transition: width 0.3s ease;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.menu-lateral.recolhido {
+    width: 60px;
+}
+
+.menu-lateral .logo {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Logo Expandido */
+.menu-lateral .logo .logo-expandido {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+/* Logo Recolhido */
+.menu-lateral .logo .logo-recolhido {
+    display: none;
+    width: 25px; /* Ajuste conforme necessário */
+}
+
+/* Quando o menu está recolhido: */
+.menu-lateral.recolhido .logo .logo-expandido {
+    display: none; /* Oculta o logo expandido */
+}
+
+.menu-lateral.recolhido .logo .logo-recolhido {
+    display: block; /* Exibe o logo recolhido */
+}
+
+.menu-lateral .logo h1 {
+    font-size: 1.5em;
+}
+
+.menu-lateral.recolhido .logo .nome-sistema {
+    display: none;
+}
+
+.menu-lateral nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+.menu-lateral nav ul li a:hover {
+    background-color: #689f38;
+}
+
+.menu-lateral nav ul li a i {
+    margin-right: 15px;
+    font-size: 1.2em;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-lateral nav ul li a .menu-texto {
+    white-space: nowrap;
+    font-size: 1em; /* Define o tamanho da fonte para o texto do menu */
+}
+
+.menu-lateral.recolhido nav ul li a .menu-texto {
+    display: none;
+}
+
+/* Conteúdo Principal */
+
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 190px; /* Ajusta a margem para o menu expandido */
+    transition: margin-left 0.3s ease;
+}
+
+.menu-lateral.recolhido ~ .conteudo-principal {
+    margin-left: 60px; /* Ajusta a margem para o menu recolhido */
+}
+
+/*Header Principal*/
+.conteudo-principal header {
+    background-color: #7cb342; /* Cor da barra superior */
+    padding: 9px;  /* Diminui o padding em 40% (original era 15px) */
+    display: flex;
+    align-items: center;
+    color: white; /* Cor do texto no header */
+    position: fixed; /* Fixa o header no topo */
+    top: 0;
+    left: 190px; /* Inicialmente alinhado com a borda direita do menu */
+    width: calc(100% - 190px); /* Largura que ocupa o espaço restante */
+    z-index: 5; /* Garante que o header fique abaixo do menu */
+    transition: left 0.3s ease, width 0.3s ease; /* Transição para a propriedade left e width */
+    justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+    height: 3.6em /* Defina uma altura fixa ou utilize 'em' para ajustar dinamicamente */
+}
+
+.menu-lateral.recolhido ~ .conteudo-principal header {
+    left: 60px; /* Alinha com a borda direita do menu recolhido */
+    width: calc(100% - 60px); /* Largura que ocupa o espaço restante */
+}
+
+.conteudo-principal header .header-esquerda {
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-principal header .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px; /* Adiciona um espaço à direita do ícone */
+}
+
+.conteudo-principal header .titulo-sistema {
+    font-size: 1em; /* Altera o tamanho da fonte para corresponder ao menu */
+    white-space: nowrap; /* Impede a quebra de linha */
+}
+
+.conteudo-principal header .header-direita {
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-principal header .header-direita i {
+    margin-left: 20px;
+    font-size: 1.2em;
+    color: white;
+}
+
+.conteudo-principal header .header-direita .nome-usuario {
+    font-size: 1em; /* Altera o tamanho da fonte para corresponder ao menu */
+    margin-left: 10px;
+    color: white;
+}
+
+.conteudo-principal .conteudo {
+    padding: 20px;
+    margin-top: 70px; /* Cria espaço abaixo do header fixo */
+}
+
+.conteudo{
+    width: 87vw;
+    border-top: 5px solid #7cb342;
+    background-color: white;
+}
+
+.titulo-sessao-principal {
+    color: #7cb342;
+}
+
+.linha-verde {
+    height: 3px; /* Define a altura da linha */
+    background-color: #7cb342; /* Define a cor da linha */
+    border: none; /* Remove a borda padrão */  
+    opacity: 0.8; /* Define a opacidade da linha */
+}
+
+.linha-reduzida{
+    width: 20%;
+}
+
+.btn-novo-verde {
+    margin-bottom: 30px;
+    width: 150px;
+    --bs-btn-bg:  #7cb342;
+    --bs-btn-border-color: #7cb342;
+    --bs-btn-hover-border-color: #53851e;   
+    --bs-btn-hover-bg: #53851e;
+    --bs-btn-active-bg: #416b14; 
+    --bs-btn-active-border-color: #416b14; 
+}
+
+
+.table-green-if {
+    --bs-table-color: #fff;
+    --bs-table-bg: #7cb342;
+    --bs-table-border-color: #7cb342;
+    --bs-table-striped-bg: #7cb342;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #7cb342;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #7cb342;
+    --bs-table-hover-color: #fff;
+    color: var(--bs-table-color);
+    border-color: var(--bs-table-border-color);
+}
+
+.icone-acao {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+}
+
+.icone-excluir {
+    background-color: rgb(189, 61, 61);
+}
+
+.icone-editar {
+    background-color: rgb(216, 174, 34);
+}
+
+.icone-consultar {
+    background-color: rgb(53, 130, 231);
+}
+
+/* Estilo para o container */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: left;
+}
+
+/* Estilo para os cartões */
+.dashboard-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+}
+
+.dashboard-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #7cb342;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-link:hover {
+    background-color: #53851e;
+}
+
+/* Estilo para o bloco do dashboard */
+.dashboard-display {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o layout da página */
+.dashboard-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Coluna da esquerda: Detalhes */
+.dashboard-details {
+    flex: 1 1 30%; /* Ocupa 20% da largura em telas grandes */
+    max-width: 30%;
+    min-width: 300px; /* Largura mínima para dispositivos menores */
+}
+
+.details-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-details h3, .dashboard-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #7cb342;
+}
+
+
+.dashboard-details p, .dashboard-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.dashboard-details p strong, .dashboard-details ul{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #7cb342;
+}
+
+.dashboard-details ul{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Coluna da direita: Dashboard */
+.dashboard-display {
+    flex: 1 1 60%; /* Ocupa 80% da largura em telas grandes */
+    max-width: 60%;
+    min-width: 300px; /* Largura mínima para dispositivos menores */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-page {
+        flex-direction: column; /* Altera para uma coluna em telas menores */
+    }
+
+    .dashboard-details, .dashboard-display {
+        max-width: 100%; /* Ocupa 100% da largura */
+        flex: 1 1 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu-lateral {
+        width: 60px;
+    }
+
+    .menu-lateral .logo h1 {
+        display: none;
+    }
+
+    .menu-lateral nav ul li a .menu-texto {
+        display: none;
+    }
+
+    .conteudo-principal header .header-direita .nome-usuario {
+        display: none;
+    }
+
+    .conteudo-principal {
+        margin-left: 60px;
+    }
+
+    .conteudo-principal header {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+}

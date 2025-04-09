@@ -1,0 +1,26 @@
+{% load static %}
+<aside class="menu-lateral extendido">
+    <div class="logo">
+        <img src="{% static 'login/media/logo-if-branca.png' %}" alt="Instituto Federal Baiano" class="logo-expandido">
+        <img src="{% static 'login/media/logo-if-branca-reduzida.png' %}" alt="Instituto Federal Baiano" class="logo-recolhido">
+        <h1 class="nome-sistema">OBSERVIF</h1>
+    </div>
+    <nav>
+        <ul>
+            <li class="has-tooltip">
+                <a href="/">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-texto">Início</span>
+                </a>
+                <div class="tooltip">Início</div>
+            </li>
+            <li class="has-tooltip">
+                <a href="{% url 'login:logout' %}">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="menu-texto">Sair</span>
+                </a>
+                <div class="tooltip">Sair</div>
+            </li>
+        </ul>
+    </nav>
+</aside>
