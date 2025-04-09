@@ -190,6 +190,49 @@ sudo ufw allow 'Nginx Full'
 sudo ufw enable
 ```
 
+Para um sistema Django com até 40 acessos simultâneos no pico, os requisitos de hardware podem ser modestos, dependendo da complexidade do sistema, do banco de dados utilizado e do volume de dados. Aqui estão os requisitos mínimos recomendados para implantação em produção:
+
+### **Requisitos de Hardware Mínimos**
+1. **Processador (CPU)**:
+   - **2 núcleos** (x86_64 ou ARM) com frequência de pelo menos 2 GHz.
+   - Exemplo: Intel Core i3 ou equivalente.
+
+2. **Memória RAM**:
+   - **2 GB** de RAM para sistemas leves.
+   - **4 GB** de RAM recomendados para maior estabilidade, especialmente se o banco de dados estiver no mesmo servidor.
+
+3. **Armazenamento (Disco)**:
+   - **20 GB** de espaço livre no disco para o sistema operacional, logs e banco de dados.
+   - Use SSD para melhor desempenho, especialmente para o banco de dados.
+
+4. **Rede**:
+   - Conexão de rede estável com largura de banda de pelo menos **10 Mbps**.
+   - Latência baixa é importante para acessos simultâneos.
+
+5. **Sistema Operacional**:
+   - Linux (Ubuntu Server 22.04 LTS ou equivalente) é recomendado para servidores de produção.
+   - Alternativamente, Windows Server 2019 ou superior.
+
+### **Requisitos de Software**
+1. **Servidor Web**:
+   - **Nginx** ou **Apache** para servir arquivos estáticos e como proxy reverso para o Django.
+   - Django deve ser executado com um servidor de aplicação como **Gunicorn** ou **uWSGI**.
+
+2. **Banco de Dados**:
+   - **PostgreSQL** ou **MySQL** são recomendados para produção.
+   - SQLite não é recomendado para produção devido a limitações de concorrência.
+
+3. **Outros**:
+   - Python 3.9 ou superior.
+   - Ambiente virtual configurado com dependências instaladas (via `pip` e `requirements.txt`).
+
+### **Configuração para 40 Acessos Simultâneos**
+- **Servidor Django**:
+  Configure o servidor de aplicação (Gunicorn ou uWSGI) para usar pelo menos **4 workers** (processos) para lidar com as requisições simultâneas.
+- **Banco de Dados**:
+  Certifique-se de que o banco de dados suporta conexões simultâneas suficientes (exemplo: configure o `max_connections` no PostgreSQL para pelo menos 50).
+
+
 ### **Licença**
 Este projeto está licenciado sob a [MIT License](LICENSE).  
 
