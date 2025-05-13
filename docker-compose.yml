@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:8000 observatorio.wsgi:application
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=False
+      - DJANGO_SECRET_KEY=sua_chave_secreta
+      - DATABASE_URL=postgres://observatorio_user:sua_senha@db:5432/observatorio
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: observatorio
+      POSTGRES_USER: observatorio_user
+      POSTGRES_PASSWORD: sua_senha
+
+volumes:
+  postgres_data:
